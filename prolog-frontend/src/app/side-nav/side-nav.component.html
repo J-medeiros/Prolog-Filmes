@@ -1,0 +1,7 @@
+<div class="sidenav" [class.active]="isActive">
+  <a [routerLink]="['/']" routerLinkActive="router-link-active" href="#" style="margin-top: 60px;">Home</a>
+  <a [routerLink]="['/Listar']" routerLinkActive="router-link-active" href="#">Buscar diretor</a>
+  <a href="#">Serviços</a>
+  <a href="#">Contato</a>
+</div>
+<button class="toggle-btn" (click)="toggleSidenav()">☰</button>

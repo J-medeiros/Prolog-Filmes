@@ -1,0 +1,14 @@
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <p>{{description}}</p>
+  <input [(ngModel)]="diretor" placeholder="Digite o nome do diretor">
+  <button (click)="buscarFilmes()">Buscar Filmes</button>
+
+  <ul>
+    <li *ngFor="let filme of filmes(); let i = index">
+      {{ filme }}
+    </li>
+  </ul>
+</div>

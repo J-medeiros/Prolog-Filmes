@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.main-content {
+    transition: margin-left 0.5s;
+}
+
+.sidenav.active~.main-content {
+    margin-left: 250px;
+}

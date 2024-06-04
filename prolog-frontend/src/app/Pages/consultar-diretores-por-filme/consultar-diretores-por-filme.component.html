@@ -1,0 +1,9 @@
+<div>
+  <h2>Consultar Diretores por Filme</h2>
+  <input [(ngModel)]="filme" placeholder="Nome do Filme">
+  <button (click)="consultar()">Consultar</button>
+
+  <ul>
+    <li *ngFor="let diretor of diretores">{{ diretor }}</li>
+  </ul>
+</div>

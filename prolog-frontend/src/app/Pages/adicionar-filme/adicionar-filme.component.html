@@ -1,0 +1,9 @@
+<div>
+  <h2>Adicionar Filme</h2>
+  <input [(ngModel)]="filme" placeholder="Nome do Filme">
+  <input [(ngModel)]="diretor" placeholder="Nome do Diretor">
+  <input [(ngModel)]="ano" type="number" placeholder="Ano">
+  <button (click)="adicionar()">Adicionar</button>
+
+  <p>{{ mensagem }}</p>
+</div>

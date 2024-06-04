@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { AdicionarFilmeService } from '../../services/adicionar-filme.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adicionar-filme',
@@ -21,16 +20,16 @@ export class AdicionarFilmeComponent implements OnInit {
   mensagem!: string;
   success: boolean = false;
 
-  constructor(private adicionarFilmeService: AdicionarFilmeService) {}
+  constructor(private adicionarFilmeService: AdicionarFilmeService) { }
 
   adicionar() {
 
-      const filme = {
-        titulo: this.titulo,
-        diretor: this.diretor,
-        ano: this.ano,
-        imagem: this.imagem,
-      };
+    const filme = {
+      titulo: this.titulo,
+      diretor: this.diretor,
+      ano: this.ano,
+      imagem: this.imagem,
+    };
 
     this.adicionarFilmeService
       .adicionarFilme(filme)
@@ -40,12 +39,12 @@ export class AdicionarFilmeComponent implements OnInit {
         (response) => {
           this.success = true;
           if ((this.success = true)) {
-            Swal.fire({
-              icon: 'success',
-              title: 'Function updated with success!',
-              showConfirmButton: false,
-              timer: 2500,
-            });
+            // Swal.fire({
+            //   icon: 'success',
+            //   title: 'Function updated with success!',
+            //   showConfirmButton: false,
+            //   timer: 2500,
+            // });
           }
           console.log(this.success);
         },
@@ -56,5 +55,5 @@ export class AdicionarFilmeComponent implements OnInit {
       );
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

@@ -4,9 +4,11 @@ import { ConsultarDiretoresPorFilmeComponent } from './Pages/consultar-diretores
 import { ConsultarFilmesPorAnoComponent } from './Pages/consultar-filmes-por-ano/consultar-filmes-por-ano.component';
 import { ConsultarFilmesPorDiretorComponent } from './Pages/consultar-filmes-por-diretor/consultar-filmes-por-diretor.component';
 import { HomeComponent } from './Pages/home/home.component';
+import { RecomendarFilmeComponent } from './Pages/recomendar-filme/recomendar-filme.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'recomendar', component: RecomendarFilmeComponent },
   {
     path: 'consultar-filmes-por-diretor',
     component: ConsultarFilmesPorDiretorComponent,

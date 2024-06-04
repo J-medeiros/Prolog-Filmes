@@ -143,4 +143,30 @@ exports.adicionarFilme = (req, res) => {
     }
   });
 };
+exports.consultarFilmesPorCategoria = (req, res) => {
+  const categoria = req.body.categoria;
 
+  if (!categoria) {
+    return res.status(400).json({ error: "Categoria é obrigatória" });
+  }
+
+  const consulta = `findall([Titulo, Diretor, Ano, Imagem], filmes_por_categoria('${categoria}', Titulo, Diretor, Ano, Imagem), Lista), writeln(Lista).`;
+  console.log(`Executando consulta: ${consulta}`);
+
+  runPrologQuery(consulta, (err, stdout) => {
+    if (err) {
+      console.error(`Erro: ${err}`);
+      return res.status(500).json({ error: "Erro ao executar a consulta Prolog" });
+    } else {
+      const filmes = stdout.map((line) => {
+        const [titulo, diretor, ano, imagem] = line
+          .replace(/[\[\]']+/g, "")
+          .split(",")
+          .map((item) => item.trim());
+        return { titulo, diretor, ano, imagem, categoria }; // Adicionei o 'categoria' ao objeto filme
+      });
+      console.log(`Filmes encontrados: ${filmes}`);
+      res.json(filmes); // Retorna diretamente a matriz de objetos de filme
+    }
+  });
+};

@@ -9,28 +9,22 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './consultar-diretores-por-filme.component.html',
   styleUrls: ['./consultar-diretores-por-filme.component.css'],
   standalone: true,
-  imports:
-    [
-      FormsModule,
-      CommonModule,
-      HttpClientModule
-    ],
-  providers: [DiretoresPorFilmeService]
+  imports: [FormsModule, CommonModule, HttpClientModule],
+  providers: [DiretoresPorFilmeService],
 })
 export class ConsultarDiretoresPorFilmeComponent implements OnInit {
-
-  filme!: string;
+  titulo!: string;
   diretores: any[] = [];
 
-  constructor(private diretoresPorFilmeService: DiretoresPorFilmeService) { }
+  constructor(private diretoresPorFilmeService: DiretoresPorFilmeService) {}
 
   consultar() {
-    this.diretoresPorFilmeService.diretoresPorFilme(this.filme).subscribe(response => {
-      this.diretores = response.diretores;
-    });
+    this.diretoresPorFilmeService
+      .diretoresPorFilme(this.titulo)
+      .subscribe((response) => {
+        this.diretores = response.diretores;
+      });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -27,7 +27,7 @@ export class ConsultarFilmesPorAnoComponent implements OnInit {
   consultar() {
     this.filmesPorAnoService.filmesPorAno(this.ano).subscribe(response => {
       this.filmes = response.filmes;
-      // console.log(response)
+      console.log(response)
     });
   }
 

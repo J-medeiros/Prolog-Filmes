@@ -29,8 +29,8 @@ export class ConsultarFilmesPorDiretorComponent implements OnInit {
 
   consultar() {
     this.filmesPorDiretorService.filmesPorDiretor(this.diretor).subscribe(response => {
-      this.filmes = response.filmes;
-      console.log(response.filmes)
+      this.filmes = response;
+      console.log(response)
     });
   }
 }

@@ -22,7 +22,6 @@ const runPrologQuery = (query, callback) => {
     }
   );
 };
-
 exports.consultarFilmesPorDiretor = (req, res) => {
   const diretor = req.body.diretor;
 
@@ -41,17 +40,17 @@ exports.consultarFilmesPorDiretor = (req, res) => {
         .json({ error: "Erro ao executar a consulta Prolog" });
     } else {
       const filmes = stdout.map((line) => {
-        const [titulo, ano, imagem, diretor] = line
+        const [titulo, ano, imagem] = line
           .replace(/[\[\]']+/g, "")
           .split(",")
           .map((item) => item.trim());
-        return { titulo, ano, imagem, diretor };
+        return { titulo, ano, imagem, diretor }; // Adicionei o 'diretor' ao objeto filme
       });
       console.log(`Filmes encontrados: ${filmes}`);
-      res.json({ filmes });
+      res.json(filmes); // Retorna diretamente a matriz de objetos de filme
     }
   });
-};
+}
 
 exports.consultarFilmesPorAno = (req, res) => {
   const ano = req.body.ano;
@@ -71,14 +70,14 @@ exports.consultarFilmesPorAno = (req, res) => {
         .json({ error: "Erro ao executar a consulta Prolog" });
     } else {
       const filmes = stdout.map((line) => {
-        const [titulo, diretor, imagem, ano] = line
+        const [titulo, diretor, imagem] = line
           .replace(/[\[\]']+/g, "")
           .split(",")
           .map((item) => item.trim());
-        return { titulo, diretor,  imagem ,ano };
+        return { titulo, diretor, imagem, ano }; // Adicionei o 'ano' ao objeto filme
       });
       console.log(`Filmes encontrados: ${filmes}`);
-      res.json({ filmes });
+      res.json(filmes); // Retorna diretamente a matriz de objetos de filme
     }
   });
 };

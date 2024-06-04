@@ -21,6 +21,7 @@ filme('O Homem que Copiava', 'Jorge Furtado', 2003, 'https://br.web.img3.acsta.n
 
 
 % Regras de Inferência
+
 filmes_por_diretor(Diretor, Titulo, Ano, Imagem) :-
     filme(Titulo, Diretor, Ano, Imagem).
 

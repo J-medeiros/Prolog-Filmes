@@ -10,7 +10,7 @@ export class FilmesPorDiretorService {
 
   constructor(private http: HttpClient) { }
 
-  filmesPorDiretor(diretor: string) {
+  filmesPorDiretor(diretor: string) :Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/consultar/filmes_por_diretor`, { diretor });
   }
 

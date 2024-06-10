@@ -16,15 +16,15 @@ export class ConsultarDiretoresPorFilmeComponent implements OnInit {
   titulo!: string;
   diretores: any[] = [];
 
-  constructor(private diretoresPorFilmeService: DiretoresPorFilmeService) {}
+  constructor(private diretoresPorFilmeService: DiretoresPorFilmeService) { }
 
   consultar() {
     this.diretoresPorFilmeService
       .diretoresPorFilme(this.titulo)
       .subscribe((response) => {
-        this.diretores = response.diretores;
+        this.diretores = response;
       });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

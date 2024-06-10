@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AdicionarFilmeService {
   private apiUrl = 'http://localhost:3000/filmes';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   adicionarFilme(data: {
     titulo: string;

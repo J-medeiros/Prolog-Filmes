@@ -14,7 +14,6 @@ filme('Aquarius', 'Kleber Mendonça Filho', 2016, 'https://m.media-amazon.com/im
 filme('Que Horas Ela Volta?', 'Anna Muylaert', 2015, 'https://upload.wikimedia.org/wikipedia/pt/7/78/Que_horas_ela_volta_ver3_xlg.jpg', 'drama').
 filme('O Pagador de Promessas', 'Anselmo Duarte', 1962, 'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/27/69/19873833.jpg', 'drama').
 filme('Bacurau', 'Kleber Mendonça Filho', 2019, 'https://br.web.img3.acsta.net/pictures/19/07/25/20/52/1819461.jpg', 'acao').
-filme('Carandiru', 'Hector Babenco', 2003, 'https://m.media-amazon.com/images/M/MV5BMmQzY2RmYzMtYzRiOS00ZTMzLTgxMGYtZjRkNzAzYjA2MmVkXkEyXkFqcGdeQXVyNDc2MTA2NDg@._V1_.jpg', 'drama').
 filme('O Homem que Copiava', 'Jorge Furtado', 2003, 'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/07/87/19871796.jpg', 'comedia').
 
 % Regras de Inferência
@@ -27,9 +26,6 @@ filmes_por_ano(Ano, Titulo, Diretor, Imagem, Categoria) :-
 
 diretores_por_filme(Titulo, Diretor, Ano, Imagem, Categoria) :-
     filme(Titulo, Diretor, Ano, Imagem, Categoria).
-
-adicionar_filme(Titulo, Diretor, Ano, Imagem, Categoria) :-
-    assertz(filme(Titulo, Diretor, Ano, Imagem, Categoria)).
 
 filmes_por_categoria(Categoria, Titulo, Diretor, Ano, Imagem) :-
     filme(Titulo, Diretor, Ano, Imagem, Categoria).

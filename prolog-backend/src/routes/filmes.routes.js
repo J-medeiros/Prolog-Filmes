@@ -6,6 +6,5 @@ router.post('/consultar/filmes_por_diretor', filmesController.consultarFilmesPor
 router.post('/consultar/filmes_por_ano', filmesController.consultarFilmesPorAno);
 router.post('/consultar/diretores_por_filme', filmesController.consultarDiretoresPorFilme);
 router.post('/consultar/filmes_por_categoria', filmesController.consultarFilmesPorCategoria);
-router.put('/adicionar_filme', filmesController.adicionarFilme);
 
 module.exports = router;

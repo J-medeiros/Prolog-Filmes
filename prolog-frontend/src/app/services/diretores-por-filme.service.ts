@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class DiretoresPorFilmeService {
   private apiUrl = 'http://localhost:3000/filmes';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   diretoresPorFilme(titulo: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/consultar/diretores_por_filme`, {
